@@ -1,0 +1,19 @@
+# Drop this file to /lib/systemd/system/sensor-server.service
+# Then run 'systemctl enable sensor-server.service'
+# Execute 'systemctl start sensor-server.service' to start immediately.
+
+[Unit]
+Description=Sensor Server
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/flask run
+User=pi
+WorkingDirectory=/home/pi
+Environment="FLASK_APP=temphumi"
+Environment="FLASK_ENV=production"
+Environment="FLASK_RUN_HOST=0"
+
+[Install]
+WantedBy=multi-user.target

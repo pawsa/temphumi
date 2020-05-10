@@ -1,0 +1,16 @@
+# Drop this file to /lib/systemd/system/sensor-recorder.service
+# Then run 'systemctl enable sensor-recorder.service'
+# Execute 'systemctl start sensor-recorder.service' to start immediately.
+
+[Unit]
+Description=Sensor Recorder
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 -m temphumi.measure
+User=pi
+WorkingDirectory=/usr/var/temphumi-instance
+
+[Install]
+WantedBy=multi-user.target

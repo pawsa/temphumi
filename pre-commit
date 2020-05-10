@@ -1,0 +1,10 @@
+#! /bin/sh
+
+set -e
+
+python3 -m coverage run -m unittest discover tests "*_test.py"
+python3 -m coverage report
+
+find temphumi tests -name '*.py' | xargs pylint
+
+exit 0

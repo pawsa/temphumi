@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature and humidity monitoring</title>
+
+<style>
+canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+div.graph {
+    width: 70%;
+}
+@media only screen and (max-width: 500px) {
+   div.graph {
+     width: 100%;
+   }
+}
+</style>
+</head>
+
+<body>
+<p>
+<button id="currentBtn">Current</button>
+<button id="prevBtn">Previous</button>
+<button id="nextBtn">Next</button>
+</p>
+<div class="graph">
+	<canvas id="power_graph"></canvas>
+</div>
+
+<div class="graph">
+	<canvas id="temp_graph"></canvas>
+</div>
+
+<script src="js/moment.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/measurements.js"></script>
+</body>
+
+</html>

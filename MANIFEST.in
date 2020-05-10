@@ -1,0 +1,3 @@
+include LICENSE
+graft temphumi/static
+graft tests
